@@ -11,6 +11,8 @@ app.set("views", __dirname + "/views");
 // Pagina principal
 app.use(express.static(__dirname + "/public"));
 
+app.use('/',require('./router/routersWeb'));
+
 app.use((req,res,next)=>{
     res.status(404).render("404",{
         titulo : 404,

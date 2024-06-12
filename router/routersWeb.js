@@ -13,3 +13,5 @@ router.get("/servicios", (req, res) => {
         tituloServicios : "Este es un mensaje dinamico de servicios"
     });
 });
+
+module.exports = router;
