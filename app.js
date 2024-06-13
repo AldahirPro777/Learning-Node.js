@@ -1,18 +1,15 @@
 const express = require("express");
-
 const app = express();
 
-const port = 7777;
+require("dotenv").config();
+
+const port = process.env.PORT || 7777;
 
 // conexión a base de datos
 const mongoose = require("mongoose");
 
-const user = "AldaPro";
-const password = "VZdM5x486EDH3qnS";
-const dbname = "veterinaria";
-
 // Asegúrate de que tu URI de conexión es correcta y segura
-const uri = `mongodb+srv://${user}:${password}@cluster0.vvtwvsq.mongodb.net/${dbname}?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.vvtwvsq.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority&appName=Cluster0`;
 
 mongoose
   .connect(uri, {
