@@ -1,5 +1,26 @@
-<%- include("template/cabecera",{titulo:'Mascotas'}) %>
+<%- include("template/cabecera",{tituloWeb:'Mascotas'}) %>
 
-<div class="container">ejs</div>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Acción</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+    <% if (arrayMascotas.length > 0) { %> <% arrayMascotas.forEach(mascota => {
+    %>
+        <tr>
+        <th scope="row"> <%= mascota.id  %> </th>
+        <td> <%= mascota.nombre  %> </td>
+        <td> <%= mascota.descripcion  %> </td>
+        <td> <%=   %> </td>
+        </tr>
+    <% }) %> <% } %>
+  </table>
+</div>
 
 <%- include("template/footer") %>
